@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-output = ""
-for i in range(25, -1, -1):
-    output += "{}{}".format(chr(122 - i), chr(89 - i)) if i % 2 == 0 else chr(122 - i)
-print(output)
+
+shift = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - shift)), end="")
+    shift = 32 if shift == 0 else 0
