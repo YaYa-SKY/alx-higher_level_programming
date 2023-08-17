@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-def common_elements(set_1, set_2):
-    """
-    Function that returns a set of
-    common elements in two sets
-    """
-    return(set_1 & set_2)
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+result = common_elements(set1, set2)
+print(result)
