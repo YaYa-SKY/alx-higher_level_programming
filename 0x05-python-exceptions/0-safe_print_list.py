@@ -1,21 +1,27 @@
 #!/usr/bin/python3
 
 def safe_print_list(my_list=None, x=0):
-    """Print x elements of a list.
+    """
+    Print up to x elements from a list.
 
     Args:
-        my_list (list, optional): The list to print elements from. Defaults to None.
-        x (int): The number of elements of my_list to print.
+        my_list (list, optional): The list containing elements to print. Defaults to an empty list.
+        x (int): The maximum number of elements to print from my_list.
 
     Returns:
-        int: The number of elements printed.
+        int: The count of elements successfully printed.
     """
     if my_list is None:
         my_list = []
 
     num_printed = 0
     for i in range(min(x, len(my_list))):
-        print("{}".format(my_list[i]), end="")
-        num_printed += 1
-    print("")
-    return num_printed
+        try:
+            print("{}".format(my_list[i]), end="")
+            num_printed += 1
+        except IndexError:
+            # Stop printing if there are no more elements to print
+            break
+    print("")  # Print a newline to separate output
+    return num_printed  # Return the count of printed elements
+
