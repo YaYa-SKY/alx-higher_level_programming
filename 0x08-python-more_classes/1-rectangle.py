@@ -13,7 +13,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-i
+
     @property
     def width(self):
         """Get/set width of the rectangle."""
@@ -36,6 +36,6 @@ i
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value < 0:
+ if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
