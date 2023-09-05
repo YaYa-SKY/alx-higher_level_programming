@@ -8,15 +8,15 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
         Args:
-            width (int): Width of new rectangle.
-            height (int): Height of new rectangle.
+            width (int):  width of the new rectangle.
+            height (int): height of the new rectangle.
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get/set width of Rectangle."""
+        """Get/set the width of  rectangle."""
         return self.__width
 
     @width.setter
@@ -29,7 +29,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set height of Rectangle."""
+        """Get/set the height of rectangle."""
         return self.__height
 
     @height.setter
@@ -41,18 +41,18 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return area of Rectangle."""
+        """Return the area of rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Return perimeter of Rectangle."""
+        """Return the perimeter of Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """Return printable representation of Rectangle.
-        Represents rectangle with # character.
+        """Return printable representation of  Rectangle.
+        Represents rectangle with  # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -71,6 +71,5 @@ class Rectangle:
         return (rect)
 
     def __del__(self):
-        """Print a message for every deletion of Rectangle."""
+        """Print a message for every deletion of a Rectangle."""
         print("Bye rectangle...")
-
