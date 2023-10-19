@@ -1,8 +1,7 @@
--- Retrieves a list of TV shows from the 'hbtn_0d_tvshows' database without any linked genre.
--- Lists all rows from the database where a specific column value is NULL.
-SELECT tv_shows.title, tv_show_genres.genre_id
-FROM tv_shows
-LEFT JOIN tv_show_genres
-ON tv_shows.id = tv_show_genres.show_id
-WHERE tv_show_genres.genre_id IS NULL
-ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
+-- Retrieves a list of genres from the hbtn_0d_tvshows database and presents the count of shows linked to each genre.
+-- This SQL query fetches data from tables, including a join operation, and then groups and orders the results by the number of linked shows in descending order.
+SELECT tv_genres.name AS 'genre', COUNT(tv_show_genres.genre_id) AS 'number_of_shows'
+FROM tv_genres RIGHT JOIN tv_show_genres
+ON tv_genres.id = tv_show_genres.genre_id
+GROUP BY genre
+ORDER BY number_of_shows DESC;
